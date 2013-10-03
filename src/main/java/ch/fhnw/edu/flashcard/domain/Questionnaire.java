@@ -17,6 +17,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.transaction.annotation.Transactional;
 
+// TODO: mehr Kommentar schreiben
+
 @Configurable
 @Entity
 public class Questionnaire {
