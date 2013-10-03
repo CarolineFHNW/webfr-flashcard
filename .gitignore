@@ -1,6 +1,8 @@
 *.class
 .DS_Store
 
+target/m2e-wtp/web-resources/META-INF/maven/ch.fhnw.edu.flashcard/flashcard/pom.properties
+
 # Package Files #
 *.jar
 *.war
