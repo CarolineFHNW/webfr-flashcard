@@ -3,6 +3,8 @@
 <tiles-definitions>
 
   <definition extends="default" name="index">
+  	<put-attribute name="header-center" value="/WEB-INF/views/welcome.jspx"/>
+  	<put-attribute name="header-right" value="/WEB-INF/views/empty.jspx"/>
     <put-attribute name="body" value="/WEB-INF/views/index.jspx"/>
   </definition>
 
@@ -22,3 +24,6 @@
         <put-attribute name="body" value="/WEB-INF/views/login.jspx"/>
     </definition>
 </tiles-definitions>
+
+<!--	Tiles-Konfiguration wenn die view index aufgerufen wird, soll neu header-center & -right gezeigt werden
+			header-left wird auch sonst angezeigt (ohne index) und wird darum im layouts.xml definiert -->

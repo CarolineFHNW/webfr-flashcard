@@ -6,13 +6,17 @@
 <tiles-definitions>
 
   <definition name="default" template="/WEB-INF/layouts/default.jspx">
-    <put-attribute name="header" value="/WEB-INF/views/header.jspx" />
+    <put-attribute name="header-left" value="/WEB-INF/views/logo.jspx" />
     <put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
   </definition>
 
   <definition name="public" template="/WEB-INF/layouts/default.jspx">
-    <put-attribute name="header" value="/WEB-INF/views/header.jspx" />
+    <put-attribute name="header-left" value="/WEB-INF/views/logo.jspx" />
     <put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
   </definition>
 
 </tiles-definitions>
+
+
+<!--	AB 5, Aufgabe 5.2
+			Nur Header-left bleibt über die ganze Applikation fest - darum wird nur dieser hier definiert -->
