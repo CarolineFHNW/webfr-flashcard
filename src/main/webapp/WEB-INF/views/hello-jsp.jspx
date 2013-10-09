@@ -1,0 +1,13 @@
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+       xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+<c:choose>
+       <c:when test="${answer.language eq 'de'}">
+             Hallo von ${answer.from} an ${answer.to}
+       </c:when>
+       <c:otherwise>
+             Hello from ${answer.from} to ${answer.to}
+       </c:otherwise>
+</c:choose>
+ 
+</div>
