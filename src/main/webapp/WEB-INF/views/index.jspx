@@ -1,8 +1,11 @@
-<div xmlns:jsp="http://java.sun.com/JSP/Page"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:form="http://www.springframework.org/tags/form"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"> 
 
 
-	<table>
+	<table class="manage-tbl">
 		<thead>
 			<tr>
 				<th>Subject</th>
@@ -18,15 +21,35 @@
 				<tr>
 					<td>${questionnaire.getSubject()}</td>
 					<td>${questionnaire.getDescription()}</td>
-					<td class="utilbox"><img alt="show" src="./images/show.png" /></td>
-					<td class="utilbox"><img alt="update"
-						src="./images/update.png" /></td>
-					<td class="utilbox"><img alt="delete"
-						src="./images/delete.png" /></td>
+					<td class="manage-icon-container">
+						<a href="questionnaires/${questionnaire.getId()}" title="Karteikarte anzeigen"> <img alt="show" src="./images/show.png" /> </a>
+					</td>
+					<td class="manage-icon-container">
+						<a href="questionnaires/${questionnaire.getId()}" title="Karteikarte aktualisieren"> <img alt="update" src="./images/update.png" /> </a>
+					</td>
+					<td class="manage-icon-container">
+						<spring:url value="questionnaires/${questionnaire.getId()}" var="delete_form_url" />
+						<spring:url	value="/resources/images/delete.png" var="delete_image_url" />
+						<form:form action="${delete_form_url}" method="DELETE">
+							<c:set var="delete_confirm_msg">
+								<spring:escapeBody javaScriptEscape="true">
+									<spring:message code="entity_delete_confirm" />
+								</spring:escapeBody>
+							</c:set>
+							<input alt="${fn:escapeXml(delete_label)}" class="image" src="${delete_image_url}" title="${fn:escapeXml(delete_label)}"
+								type="image" value="${fn:escapeXml(delete_label)}" onclick="return confirm('${delete_confirm_msg}');" />
+						</form:form></td>
 				</tr>
 			</c:forEach>
 
 		</tbody>
 	</table>
-	<img alt="add" src="./images/add.png" />
+	<a href="questionnaires?form" title="show"><img alt="add" src="./images/add.png" /></a>
+
 </div>
+
+
+
+
+
+						

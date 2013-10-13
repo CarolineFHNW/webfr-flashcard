@@ -26,7 +26,7 @@ public class QuestionnaireController {
         }
         uiModel.asMap().clear();
         questionnaire.persist();
-        return "redirect:/questionnaires/" + encodeUrlPathSegment(questionnaire.getId().toString(), httpServletRequest);
+        return "redirect:/questionnaires";
     }
 
 	@RequestMapping(params = "form", produces = "text/html")
@@ -64,7 +64,8 @@ public class QuestionnaireController {
         }
         uiModel.asMap().clear();
         questionnaire.merge();
-        return "redirect:/questionnaires/" + encodeUrlPathSegment(questionnaire.getId().toString(), httpServletRequest);
+        return "redirect:/questionnaires"; // Zurück zur Liste, statt anzeigen des Datensatzes
+//        return "redirect:/questionnaires/" + encodeUrlPathSegment(questionnaire.getId().toString(), httpServletRequest);
     }
 
 	@RequestMapping(value = "/{id}", params = "form", produces = "text/html")
