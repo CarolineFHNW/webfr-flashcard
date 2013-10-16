@@ -16,15 +16,15 @@
     <put-attribute name="body" value="/WEB-INF/views/hello-jspjstl.jspx"/>
   </definition>
 
-  <definition extends="public" name="dataAccessFailure">
+  <definition extends="index" name="dataAccessFailure">
     <put-attribute name="body" value="/WEB-INF/views/dataAccessFailure.jspx"/>
   </definition>
 
-  <definition extends="public" name="resourceNotFound">
+  <definition extends="index" name="resourceNotFound">
     <put-attribute name="body" value="/WEB-INF/views/resourceNotFound.jspx"/>
   </definition>
 
-  <definition extends="public" name="uncaughtException">
+  <definition extends="index" name="uncaughtException">
     <put-attribute name="body" value="/WEB-INF/views/uncaughtException.jspx"/>
   </definition>
 

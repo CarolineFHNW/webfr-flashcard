@@ -26,7 +26,8 @@ public class QuestionnaireController {
         }
         uiModel.asMap().clear();
         questionnaire.persist();
-        return "redirect:/questionnaires";
+//      return "redirect:/questionnaires";
+        return "index";
     }
 
 	@RequestMapping(params = "form", produces = "text/html")
